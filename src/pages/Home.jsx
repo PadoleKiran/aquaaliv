@@ -29,7 +29,14 @@ export default function Home() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s) => (
-            <ServiceCard key={s.id} title={s.title} description={s.description} features={s.features} cta={<Link to="/contact" className="btn-primary mt-5 w-full">Book Service</Link>} />
+            <ServiceCard
+              key={s.id}
+              title={s.title}
+              description={s.description}
+              features={s.features}
+              image={s.image}
+              cta={<Link to="/contact" className="btn-primary mt-5 w-full">Book Service</Link>}
+            />
           ))}
         </div>
         <div className="sm:hidden mt-6">

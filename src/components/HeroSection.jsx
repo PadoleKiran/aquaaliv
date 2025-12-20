@@ -27,14 +27,20 @@ export default function HeroSection() {
         </div>
         <div className="relative">
           <div className="aspect-[4/3] rounded-3xl bg-gradient-to-br from-sky-400 to-emerald-400 opacity-10 absolute inset-0"/>
-          <div className="relative rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
-            <div className="h-64 sm:h-80 rounded-2xl bg-gradient-to-br from-sky-100 to-emerald-100 grid place-items-center">
-              <div className="text-center">
-                <div className="mx-auto mb-3 h-16 w-16 rounded-full bg-gradient-to-br from-brand-blue to-brand-green grid place-items-center text-white font-bold">A</div>
-                <p className="text-slate-700 font-medium">Advanced RO Purification</p>
-                <p className="text-slate-500 text-sm">Clean taste • Minerals retained • 7-stage filtration</p>
-              </div>
-            </div>
+          <div className="relative rounded-3xl border border-slate-200 bg-white overflow-hidden shadow-soft">
+            <img
+              src="https://images.unsplash.com/photo-1588159343745-445ae0b163f8?auto=format&fit=crop&w=1200&q=80"
+              alt="Modern kitchen with RO water purifier and a glass of clean water"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              referrerPolicy="no-referrer"
+              onError={(e) => {
+                e.currentTarget.onerror = null
+                e.currentTarget.src = 'https://placehold.co/960x720?text=AquaaLiv%20Hero&font=inter'
+              }}
+              className="h-64 sm:h-80 w-full object-cover"
+            />
           </div>
         </div>
       </div>

@@ -1,6 +1,21 @@
-export default function ProductCard({ name, type, capacity, price, features = [], onEnquire }) {
+export default function ProductCard({ name, type, capacity, price, features = [], onEnquire, image }) {
   return (
     <div className="card h-full flex flex-col">
+      {image && (
+        <div className="mb-4 overflow-hidden rounded-xl aspect-[4/3] bg-slate-100">
+          <img
+            src={image}
+            alt={`${name} purifier image`}
+            loading="lazy"
+            decoding="async"
+            onError={(e) => {
+              e.currentTarget.onerror = null
+              e.currentTarget.src = `https://placehold.co/600x400?text=${encodeURIComponent(name)}&font=inter`
+            }}
+            className="h-full w-full object-cover"
+          />
+        </div>
+      )}
       <div className="flex-1">
         <p className="text-xs uppercase tracking-wide text-slate-500">{type}</p>
         <h3 className="mt-1 text-lg font-semibold text-slate-900">{name}</h3>

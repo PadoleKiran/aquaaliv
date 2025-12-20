@@ -24,6 +24,7 @@ export default function Services() {
               title={s.title}
               description={s.description}
               features={s.features}
+              image={s.image}
               cta={<Link to="/contact" className="btn-primary mt-5 w-full">Book Service</Link>}
             />
           ))}
