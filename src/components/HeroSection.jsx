@@ -1,49 +1,71 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import heroImage from "../assets/Second.jpeg";
 
 export default function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-emerald-50">
       <div className="container-p py-20 sm:py-24 lg:py-28 grid lg:grid-cols-2 gap-10 items-center">
+        
+        {/* Left Content */}
         <div>
           <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white px-3 py-1 text-xs font-medium text-sky-700">
-            <span className="h-2 w-2 rounded-full bg-brand-blue" /> Trusted Water Experts
+            <span className="h-2 w-2 rounded-full bg-brand-blue" />
+            Trusted Water Experts
           </p>
+
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
             Pure Water. <span className="text-brand-blue">Pure Life.</span>
           </h1>
+
           <p className="mt-4 text-slate-600 text-base sm:text-lg max-w-prose">
-            Pure, healthy, and great-tasting water solutions for homes and businesses. Installation, repair, AMC, and expert guidance.
+            Pure, healthy, and great-tasting water solutions for homes and
+            businesses. Installation, repair, AMC, and expert guidance.
           </p>
+
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <Link to="/contact" className="btn-primary">Book Free Water Check</Link>
-            <Link to="/products" className="btn-secondary">Explore Products</Link>
+            <Link to="/contact" className="btn-primary">
+              Book Free Water Check
+            </Link>
+            <Link to="/products" className="btn-secondary">
+              Explore Products
+            </Link>
           </div>
+
           <ul className="mt-6 grid grid-cols-2 gap-4 text-sm text-slate-600">
-            <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-brand-blue"/> Certified Technicians</li>
-            <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-brand-blue"/> Genuine Filters</li>
-            <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-brand-blue"/> Quick Service</li>
-            <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-brand-blue"/> AMC Plans</li>
+            <li className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-blue" />
+              Certified Technicians
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-blue" />
+              Genuine Filters
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-blue" />
+              Quick Service
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-blue" />
+              AMC Plans
+            </li>
           </ul>
         </div>
+
+        {/* Right Image */}
         <div className="relative">
-          <div className="aspect-[4/3] rounded-3xl bg-gradient-to-br from-sky-400 to-emerald-400 opacity-10 absolute inset-0"/>
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sky-400 to-emerald-400 opacity-10" />
+
           <div className="relative rounded-3xl border border-slate-200 bg-white overflow-hidden shadow-soft">
             <img
-              src="https://images.unsplash.com/photo-1588159343745-445ae0b163f8?auto=format&fit=crop&w=1200&q=80"
-              alt="Modern kitchen with RO water purifier and a glass of clean water"
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-              referrerPolicy="no-referrer"
-              onError={(e) => {
-                e.currentTarget.onerror = null
-                e.currentTarget.src = 'https://placehold.co/960x720?text=AquaaLiv%20Hero&font=inter'
-              }}
+              src={heroImage}
+              alt="AquaaLiv water purifier service"
               className="h-64 sm:h-80 w-full object-cover"
+              loading="eager"
             />
           </div>
         </div>
+
       </div>
     </section>
-  )
+  );
 }

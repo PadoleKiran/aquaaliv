@@ -1,101 +1,172 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { DEFAULT_SITE_CONTACT, getSiteContact } from '../lib/siteContact'
-import logo from '../assets/aquaaliv_logo.png'
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { DEFAULT_SITE_CONTACT, getSiteContact } from "../lib/siteContact";
+import logo from "../assets/aquaaliv_logo.png";
 
 export default function Footer() {
-  const [contact, setContact] = useState(DEFAULT_SITE_CONTACT)
+  const [contact, setContact] = useState(DEFAULT_SITE_CONTACT);
 
   useEffect(() => {
-    let alive = true
+    let alive = true;
 
-    ;(async () => {
+    (async () => {
       try {
-        const data = await getSiteContact()
-        if (!alive) return
-        setContact(data)
+        const data = await getSiteContact();
+        if (!alive) return;
+        setContact(data);
       } catch {
-        if (!alive) return
-        setContact(DEFAULT_SITE_CONTACT)
+        if (!alive) return;
+        setContact(DEFAULT_SITE_CONTACT);
       }
-    })()
+    })();
 
     return () => {
-      alive = false
-    }
-  }, [])
+      alive = false;
+    };
+  }, []);
 
   return (
     <footer className="mt-16 border-t border-slate-200 bg-slate-50">
       <div className="container-p py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        {/* Logo & About */}
         <div>
-          <div className="mb-4">
-            <Link to="/" aria-label="AquaaLiv Home" className="inline-flex items-center">
-              <img src={logo} alt="AquaaLiv" className="h-10 w-auto object-contain" />
-            </Link>
-          </div>
-          <p className="text-slate-600 text-sm">Pure, healthy, and great-tasting water solutions for homes and businesses. Installation, repair, AMC, and expert guidance.</p>
+          <Link to="/" aria-label="AquaaLiv Home" className="inline-flex items-center mb-4">
+            <img
+              src={logo}
+              alt="AquaaLiv"
+              className="h-14 w-auto object-contain"
+            />
+          </Link>
+          <p className="text-slate-600 text-sm">
+            Pure, healthy, and great-tasting water solutions for homes and
+            businesses. Installation, repair, AMC, and expert guidance.
+          </p>
         </div>
+
+        {/* Quick Links */}
         <div>
           <h4 className="font-semibold text-slate-900 mb-3">Quick Links</h4>
           <ul className="space-y-2 text-sm">
-            <li>
-              <Link to="/" className="group flex items-center gap-2 rounded-md px-2 py-1 hover:bg-slate-100 transition">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-blue opacity-80 group-hover:opacity-100"><path d="m3 9 9-7 9 7"/><path d="M9 22V12h6v10"/></svg>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/services" className="group flex items-center gap-2 rounded-md px-2 py-1 hover:bg-slate-100 transition">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-blue opacity-80 group-hover:opacity-100"><path d="M12 2v20"/><path d="M7 7h10"/><path d="M7 12h10"/><path d="M7 17h10"/></svg>
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link to="/products" className="group flex items-center gap-2 rounded-md px-2 py-1 hover:bg-slate-100 transition">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-blue opacity-80 group-hover:opacity-100"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 20h10"/></svg>
-                Products
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" className="group flex items-center gap-2 rounded-md px-2 py-1 hover:bg-slate-100 transition">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-blue opacity-80 group-hover:opacity-100"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className="group flex items-center gap-2 rounded-md px-2 py-1 hover:bg-slate-100 transition">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-blue opacity-80 group-hover:opacity-100"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link to="/privacy-policy" className="group flex items-center gap-2 rounded-md px-2 py-1 hover:bg-slate-100 transition">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-blue opacity-80 group-hover:opacity-100"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                Privacy Policy
-              </Link>
-            </li>
+            {[
+              { to: "/", label: "Home" },
+              { to: "/services", label: "Services" },
+              { to: "/products", label: "Products" },
+              { to: "/about", label: "About Us" },
+              { to: "/contact", label: "Contact" },
+            ].map((item) => (
+              <li key={item.label}>
+                <Link
+                  to={item.to}
+                  className="block rounded-md px-2 py-1 hover:bg-slate-100 transition"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
+
+        {/* Contact With Icons */}
         <div>
           <h4 className="font-semibold text-slate-900 mb-3">Contact</h4>
-          <ul className="space-y-2 text-sm text-slate-700">
-            <li>Phone: <a href={`tel:${contact.phoneTel}`} className="hover:underline">{contact.phoneDisplay}</a></li>
-            <li>Email: <a href={`mailto:${contact.email}`} className="hover:underline">{contact.email}</a></li>
-            <li>Address: {contact.address}</li>
+          <ul className="space-y-3 text-sm text-slate-700">
+
+            {/* Phone */}
+            <li className="flex items-start gap-3">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-brand-blue mt-0.5"
+              >
+                <path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a2 2 0 0 1 2 1.72l.5 3a2 2 0 0 1-1.09 2.18l-1.27.64a16 16 0 0 0 6.29 6.29l.64-1.27a2 2 0 0 1 2.18-1.09l3 .5a2 2 0 0 1 1.72 2z" />
+              </svg>
+              <span>
+                <a
+                  href={`tel:${contact.phoneTel}`}
+                  className="hover:underline"
+                >
+                  {contact.phoneDisplay}
+                </a>
+              </span>
+            </li>
+
+            {/* Email */}
+            <li className="flex items-start gap-3">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-brand-blue mt-0.5"
+              >
+                <path d="M4 4h16v16H4z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              <span>
+                <a
+                  href={`mailto:${contact.email}`}
+                  className="hover:underline"
+                >
+                  {contact.email}
+                </a>
+              </span>
+            </li>
+
+            {/* Address */}
+            <li className="flex items-start gap-3">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-brand-blue mt-0.5"
+              >
+                <path d="M12 21s8-4.5 8-11a8 8 0 1 0-16 0c0 6.5 8 11 8 11z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span>{contact.address}</span>
+            </li>
+
           </ul>
         </div>
+
+        {/* CTA */}
         <div>
           <h4 className="font-semibold text-slate-900 mb-3">Get Started</h4>
           <div className="flex flex-col gap-3">
-            <Link to="/contact" className="btn-primary">Book Service</Link>
-            <Link to="/products" className="btn-secondary">Explore Products</Link>
+            <Link to="/contact" className="btn-primary">
+              Book Service
+            </Link>
+            <Link to="/products" className="btn-secondary">
+              Explore Products
+            </Link>
           </div>
         </div>
+
       </div>
+
+      {/* Bottom Bar */}
       <div className="border-t border-slate-200">
-        <div className="container-p py-4 text-center text-xs text-slate-500">© {new Date().getFullYear()} AquaaLiv. All rights reserved.</div>
+        <div className="container-p py-4 flex flex-col items-center gap-2 text-xs text-slate-500">
+          <img src={logo} alt="AquaaLiv" className="h-8 w-auto" />
+          © {new Date().getFullYear()} AquaaLiv. All rights reserved.
+        </div>
       </div>
     </footer>
-  )
+  );
 }
