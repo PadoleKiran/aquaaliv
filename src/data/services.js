@@ -7,7 +7,7 @@ import amcPlans from "../assets/servicesPhotos/amc plans images.jpeg";
 import filterReplacement from "../assets/servicesPhotos/filter replacement images.png";
 
 import customerCareService from "../assets/servicesPhotos/customer care service.jpeg";
-import routineService from "../assets/servicesPhotos/routeen service.webp";
+import routineService from "../assets/servicesPhotos/routine service6.png";
 import newSalesService from "../assets/servicesPhotos/new sales images.jpeg";
 import waterTreatmentService from "../assets/servicesPhotos/8.png";
 
