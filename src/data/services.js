@@ -76,80 +76,75 @@ export const services = [
     image: filterReplacement,
   },
 
-  // 5️⃣ Domestic RO Plant Service
+  // ==================================================
+  // UPDATED SERVICES (5–8)
+  // ==================================================
+
+  // 5️⃣ Customer Care Service
   {
-    id: "domestic-ro-plant",
-    title: "Domestic RO Plant Service",
+    id: "customer-care",
+    title: "Customer Care Service",
     description:
-      "Complete service, maintenance, and support for 50–100 LPH RO plants ensuring consistent water quality and long-term performance.",
+      "Our dedicated support team ensures quick response, clear guidance, and complete satisfaction for all your water purifier needs.",
     features: [
-      "Complete system inspection",
-      "Pre-filter & membrane cleaning",
-      "Pump & electrical component check",
-      "Pressure & flow calibration",
-      "TDS & water quality testing",
-      "Leakage & pipe connection inspection",
-      "Affordable service packages",
-      "Recommended every 3–6 months",
+      "Easy service booking",
+      "Fast complaint resolution",
+      "Expert technical support",
+      "Genuine spare assistance",
+      "Follow-up & service reminders",
     ],
-    icon: "home",
+    icon: "headphones",
     image: customerCareService,
   },
 
-  // 6️⃣ Commercial RO Plant Service
+  // 6️⃣ Routine Service
   {
-    id: "commercial-ro-plant",
-    title: "Commercial RO Plant Service",
+    id: "routine-service",
+    title: "Routine Service",
     description:
-      "Professional service and maintenance for commercial RO plants ensuring uninterrupted pure water supply for business operations.",
+      "Regular maintenance to keep your water purifier working efficiently and delivering safe, pure drinking water every day.",
     features: [
-      "Complete plant inspection & troubleshooting",
-      "Pre-filter, membrane & media servicing",
-      "High-pressure pump & electrical system check",
-      "Pressure, flow & TDS calibration",
-      "Leakage repair & pipeline maintenance",
-      "Water quality performance testing",
+      "Pre-filter cleaning",
+      "Sediment & carbon filter inspection",
+      "Membrane performance check",
+      "Water quality & TDS testing",
+      "Leak inspection & system calibration",
     ],
-    icon: "building",
+    icon: "settings",
     image: routineService,
   },
 
-  // 7️⃣ Industrial RO Plant Maintenance
+  // 7️⃣ New Sales – Water Purifiers & RO Systems
   {
-    id: "industrial-ro-plant",
-    title: "Industrial RO Plant Maintenance",
+    id: "new-sales",
+    title: "New Sales – Water Purifiers & RO Systems",
     description:
-      "Comprehensive maintenance and support for large-scale industrial RO plants ensuring efficient operation and minimal downtime.",
+      "High-quality RO systems and water purifiers for homes, offices, and commercial use ensuring safe and healthy drinking water.",
     features: [
-      "Comprehensive system inspection",
-      "Pre-treatment, membrane & filter maintenance",
-      "High-capacity pump & motor checks",
-      "Electrical panel & automation inspection",
-      "Pressure, flow & TDS calibration",
-      "Leak detection & pipeline servicing",
-      "Water quality testing & performance optimization",
+      "Domestic RO systems",
+      "Commercial RO plants",
+      "Industrial RO systems",
+      "UV / UF purifiers",
+      "Customized water solutions",
     ],
-    icon: "factory",
+    icon: "shopping-cart",
     image: newSalesService,
   },
 
-  // 8️⃣ Water Treatment Plant Services
+  // 8️⃣ New Enquiry & Site Visit Service
   {
-    id: "water-treatment-plant",
-    title: "Water Treatment Plant Services",
+    id: "site-visit",
+    title: "New Enquiry & Site Visit Service",
     description:
-      "Complete maintenance and operational support for WTP, DM plants, and STP plants ensuring optimal water quality and uninterrupted service.",
+      "Quick enquiry support and free site visits to help you choose the right RO system based on your water quality and usage needs.",
     features: [
-      "Complete plant inspection & troubleshooting",
-      "Pre-treatment system servicing",
-      "DM plant operation & maintenance",
-      "STP servicing & membrane checks",
-      "Pumps, motors & electrical panel inspection",
-      "Pressure, flow & water quality monitoring",
-      "Preventive maintenance & performance optimization",
-      "Leak detection & pipeline maintenance",
+      "Free water testing & analysis",
+      "Expert site inspection",
+      "Personalized RO system recommendation",
+      "Clear pricing & transparent guidance",
+      "Professional installation planning",
     ],
-    icon: "droplet",
+    icon: "map-pin",
     image: waterTreatmentService,
   },
 ];
