@@ -1,7 +1,7 @@
 import domesticImg from "../assets/roservices_photos/DOMESTIC RO Plant Service.jpeg";
 import commercialImg from "../assets/roservices_photos/Commercial RO Plant Service.png";
 import industrialImg from "../assets/roservices_photos/Industrial RO Plant Maintenance.png";
-import wtpImg from "../assets/roservices_photos/Water Treatment Plant Services.jpeg";
+import wtpImg from "../assets/roservices_photos/Water Treatment Plant Services.png";
 
 export const roPlantServices = [
   {
