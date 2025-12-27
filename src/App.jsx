@@ -6,6 +6,7 @@ import WhatsAppFloatingButton from './components/WhatsAppFloatingButton'
 import CallFloatingButton from './components/CallFloatingButton'
 import ScrollToTop from './routes/ScrollToTop'
 import RequireDemoAuth from './routes/RequireDemoAuth'
+import TopBar from './components/TopBar'
 
 const Home = lazy(() => import('./pages/Home'))
 const Services = lazy(() => import('./pages/Services'))
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <ScrollToTop />
+      <TopBar />
       <Navbar />
       <main className="flex-1">
         <Suspense fallback={<div className="container-p py-16">Loading...</div>}>
@@ -38,7 +40,7 @@ function App() {
         </Suspense>
       </main>
       <Footer />
-      <WhatsAppFloatingButton phoneNumber="+919999999999" />
+      <WhatsAppFloatingButton phoneNumber="+919689142762" />
       <CallFloatingButton phoneNumber="+919689102762" />
     </div>
   )
