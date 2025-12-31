@@ -299,7 +299,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= WHY CHOOSE AQUAALIV ================= */}
+      {/* ================= WHY CHOOSE AQUAALIV =================
       <section className="container-p py-16">
         <div className="mb-8 text-center">
           <div className="mx-auto mb-3 h-1.5 w-24 rounded-full bg-gradient-to-r from-brand-blue to-brand-green" />
@@ -369,7 +369,90 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </section> */}
+
+      {/* ================= WHY CHOOSE AQUAALIV ================= */}
+      <section className="container-p py-16">
+        <div className="mb-10 text-center">
+          <div className="mx-auto mb-3 h-1.5 w-24 rounded-full bg-gradient-to-r from-brand-blue to-brand-green" />
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+            WHY CHOOSE AQUAALIV
+          </h2>
+          <p className="text-slate-600">
+            YOUR TRUSTED PARTNER IN PURE DRINKING WATER
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              title: "FAST AND RELIABLE",
+              desc: "Quick installations and doorstep service across major cities.",
+              icon: (
+                <path d="M3 12h18M13 6l6 6-6 6" />
+              ),
+            },
+            {
+              title: "PURE WATER ASSURANCE",
+              desc: "Multi-stage RO purification guarantees safe drinking water.",
+              icon: (
+                <>
+                  <path d="M12 2C8 7 6 9.5 6 13a6 6 0 0 0 12 0c0-3.5-2-6-6-11z" />
+                </>
+              ),
+            },
+            {
+              title: "EXPERT TECHNICIANS",
+              desc: "Certified professionals handle everything with care.",
+              icon: (
+                <>
+                  <circle cx="12" cy="7" r="4" />
+                  <path d="M4 21a8 8 0 0 1 16 0" />
+                </>
+              ),
+            },
+            {
+              title: "24 / 7 SUPPORT",
+              desc: "Always available to solve issues and schedule maintenance.",
+              icon: (
+                <>
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </>
+              ),
+            },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="card text-center transition hover:-translate-y-1 hover:shadow-lg"
+            >
+              {/* ICON */}
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-100 to-emerald-100 ring-1 ring-sky-200 shadow-sm text-brand-blue">
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  {item.icon}
+                </svg>
+              </div>
+
+              <p className="text-lg font-semibold text-slate-900">
+                {item.title}
+              </p>
+              <p className="mt-2 text-sm text-slate-600">
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
       </section>
+
 
       {/* ================= TESTIMONIALS ================= */}
       <section className="container-p py-16">
