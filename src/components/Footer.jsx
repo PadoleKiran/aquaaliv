@@ -164,7 +164,6 @@
 // }
 
 
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { DEFAULT_SITE_CONTACT, getSiteContact } from "../lib/siteContact";
@@ -198,14 +197,14 @@ export default function Footer() {
 
         {/* ================= Logo & About ================= */}
         <div>
-          <Link to="/" className="inline-flex items-center mb-4">
+          <Link to="/" className="inline-flex items-center mb-6">
             <img
               src={footerLogo}
               alt="AquaaLiv"
-              className="h-14 sm:h-16 w-auto opacity-100"
+              className="h-20 sm:h-24 lg:h-28 w-auto"
             />
           </Link>
-          <p className="text-slate-200 text-sm leading-relaxed">
+          <p className="text-slate-200 text-sm leading-relaxed max-w-sm">
             Pure, healthy, and great-tasting water solutions for homes and
             businesses. Installation, repair, AMC, and expert guidance.
           </p>
@@ -225,7 +224,7 @@ export default function Footer() {
               <li key={item.label}>
                 <Link
                   to={item.to}
-                  className="block px-2 py-1 rounded-md text-white hover:text-white hover:bg-white/10 transition"
+                  className="block px-2 py-1 rounded-md text-white hover:bg-white/10 transition"
                 >
                   {item.label}
                 </Link>
@@ -239,8 +238,6 @@ export default function Footer() {
           <h4 className="font-semibold text-white mb-3">Contact</h4>
 
           <ul className="space-y-5 text-sm">
-
-            {/* Phone */}
             <li className="flex items-start gap-3">
               <svg
                 className="w-5 h-5 text-sky-300 shrink-0"
@@ -256,7 +253,6 @@ export default function Footer() {
               <span>{contact.phoneDisplay}</span>
             </li>
 
-            {/* Email */}
             <li className="flex items-start gap-3">
               <svg
                 className="w-5 h-5 text-sky-300 shrink-0"
@@ -273,7 +269,6 @@ export default function Footer() {
               <span>{contact.email}</span>
             </li>
 
-            {/* Address */}
             <li className="flex items-start gap-3">
               <svg
                 className="w-5 h-5 text-sky-300 shrink-0 mt-0.5"
@@ -291,7 +286,6 @@ export default function Footer() {
                 {contact.address}
               </span>
             </li>
-
           </ul>
         </div>
 
