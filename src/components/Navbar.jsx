@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className="container-p h-16 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Link to="/" className="flex items-center" aria-label="AquaaLiv Home">
-            <img src={logo} alt="AquaaLiv" className="h-10 sm:h-11 w-auto object-contain" />
+            <img src={logo} alt="AquaaLiv" loading="lazy" decoding="async" className="h-10 sm:h-11 w-auto object-contain" />
           </Link>
         </div>
 

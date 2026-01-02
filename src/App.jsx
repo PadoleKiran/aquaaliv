@@ -9,6 +9,7 @@ import RequireDemoAuth from './routes/RequireDemoAuth'
 import TopBar from './components/TopBar'
 
 const Home = lazy(() => import('./pages/Home'))
+const HomeWithCTA = lazy(() => import('./pages/HomeWithCTA'))
 const Services = lazy(() => import('./pages/Services'))
 const Products = lazy(() => import('./pages/Products'))
 const ProductDetail = lazy(() => import('./pages/ProductDetail'))
@@ -30,7 +31,7 @@ function App() {
       <main className="flex-1">
         <Suspense fallback={<div className="container-p py-16">Loading...</div>}>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<HomeWithCTA />} />
             <Route path="/services" element={<Services />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<ProductDetail />} />

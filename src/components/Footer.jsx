@@ -201,6 +201,8 @@ export default function Footer() {
             <img
               src={footerLogo}
               alt="AquaaLiv"
+              loading="lazy"
+              decoding="async"
               className="h-20 sm:h-24 lg:h-28 w-auto"
             />
           </Link>
